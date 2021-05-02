@@ -54,7 +54,7 @@
                     <el-alert title="解包请选择bin文件，打包请选择zip文件" type="info" :closable="false" show-icon>
                     </el-alert>
                     <br>
-                    <el-upload class="upload-demo" ref="upload" :action="baseUrl + 'watchfacepackage/upload'" :on-preview="handlePreview" :on-remove="handleRemove" :before-upload="beforeUpload" :file-list="fileList" :on-success="onSuccess" :on-error="onError" :auto-upload="true" name="file">
+                    <el-upload class="upload-demo" ref="upload" :action="'http://watchface.pingx.tech/tools/' + 'watchfacepackage/upload'" :on-preview="handlePreview" :on-remove="handleRemove" :before-upload="beforeUpload" :file-list="fileList" :on-success="onSuccess" :on-error="onError" :auto-upload="true" name="file">
                         <el-button slot="trigger" size="small" type="success">选取文件并上传</el-button>
                         <div slot="tip" class="el-upload__tip">只能上传zip/bin文件，且不超过10M</div>
                     </el-upload>
@@ -141,7 +141,7 @@
                             message: '操作成功，即将开始下载',
                             type: 'success'
                         })
-                        window.location.href = this.baseUrl + '/watchfacepackage/download?filePath=' + response.data;
+                        window.location.href = 'http://watchface.pingx.tech/tools/' + '/watchfacepackage/download?filePath=' + response.data;
                     } else {
                         this.$message({
                             message: response.msg,
